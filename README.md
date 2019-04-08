@@ -6,13 +6,13 @@ This project provides a blockchain-based supply chain solution for dairy product
 ### UML Diagrams
 
 * Activity Diagram
-![diagram](diagrams/Activity Diagram.jpg)
+![image](https://github.com/waldamegh/DairySupplyChain/blob/master/diagrams/Activity%20Diagram.jpg)
 
 * Data Diagram
-![diagram](diagrams/Data Diagram.jpg)
+![image](https://github.com/waldamegh/DairySupplyChain/blob/master/diagrams/Data%20Diagram.jpg)
 
 * State Diagram
-![diagram](diagrams/State Diagram.jpg)
+![image](https://github.com/waldamegh/DairySupplyChain/blob/master/diagrams/Sequence%20Diagram.jpg)
 
 * Sequence Diagram
-![diagram](diagrams/Sequence Diagram.jpg)
+![image](https://github.com/waldamegh/DairySupplyChain/blob/master/diagrams/State%20Diagram.jpg)
