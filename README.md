@@ -3,14 +3,16 @@ This project provides a blockchain-based supply chain solution for dairy product
 
 ## Part One (Analysis Diagrams Architecture)
 
-### System Scenario
-
 ### UML Diagrams
 
 * Activity Diagram
+![diagram](diagrams/Activity Diagram.jpg)
 
 * Data Diagram
+![diagram](diagrams/Data Diagram.jpg)
 
 * State Diagram
+![diagram](diagrams/State Diagram.jpg)
 
 * Sequence Diagram
+![diagram](diagrams/Sequence Diagram.jpg)
