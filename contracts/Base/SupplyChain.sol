@@ -186,7 +186,7 @@ contract SupplyChain is AccessControl, Ownable{
 
   // Define a function 'milkItem' that allows a farmer to mark an item 'Milked'
   function dairyItem(uint _upc, address payable _originFarmerID, string memory _originFarmName, string memory _originFarmInformation, string memory  _originFarmLatitude, string memory  _originFarmLongitude, string memory  _productNotes) public 
-  //onlyFarmer()
+  onlyFarmer()
   {
     // Add the new item as part of Dairy
     items[_upc] = Item({
@@ -221,7 +221,7 @@ contract SupplyChain is AccessControl, Ownable{
   milked(_upc)
   // Call modifier to verify caller of this function
   verifyCaller(items[_upc].originFarmerID)
-  //onlyFarmer()
+  onlyFarmer()
   {
     // Update the appropriate fields
     items[_upc].itemState = State.ForSale;
@@ -242,7 +242,7 @@ contract SupplyChain is AccessControl, Ownable{
     paidEnough(items[_upc].productPrice)
     // Call modifer to send any excess ether back to buyer
     checkValue(_upc)
-    //onlyManufacturer()
+    onlyManufacturer()
   {
     // Update the appropriate fields - ownerID, manufacturerID, itemState
     items[_upc].ownerID = msg.sender;
@@ -263,7 +263,7 @@ contract SupplyChain is AccessControl, Ownable{
     sold(_upc)
     // Call modifier to verify caller of this function
     verifyCaller(items[_upc].originFarmerID)
-    //onlyFarmer()
+    onlyFarmer()
   {
     // Update the appropriate fields
     items[_upc].itemState = State.Shipped;
@@ -280,7 +280,7 @@ contract SupplyChain is AccessControl, Ownable{
     shipped(_upc) 
     // Access Control List enforced by calling Smart Contract / DApp
     verifyCaller(items[_upc].manufacturerID)
-    //onlyManufacturer()
+    onlyManufacturer()
   {
     // Update the appropriate field itemState
     items[_upc].itemState = State.Received;
@@ -296,7 +296,7 @@ contract SupplyChain is AccessControl, Ownable{
   received(_upc)
   // Call modifier to verify caller of this function
   verifyCaller(items[_upc].manufacturerID)
-  //onlyManufacturer()
+  onlyManufacturer()
   {
     // Update the appropriate fields
     items[_upc].itemState = State.Processed;
@@ -312,6 +312,7 @@ contract SupplyChain is AccessControl, Ownable{
   processed(_upc)
   // Call modifier to verify caller of this function
   verifyCaller(items[_upc].manufacturerID)
+  onlyManufacturer()
   {
     // Update the appropriate fields
     items[_upc].itemState = State.Packed;
@@ -327,7 +328,7 @@ contract SupplyChain is AccessControl, Ownable{
   packed(_upc)
   // Call modifier to verify caller of this function
   verifyCaller(items[_upc].manufacturerID)
-  //onlyManufacturer()
+  onlyManufacturer()
   {
     // Update the appropriate fields
     items[_upc].itemState = State.ForSaleByManufacture;
@@ -348,7 +349,7 @@ contract SupplyChain is AccessControl, Ownable{
     paidEnough(items[_upc].productPrice)
     // Call modifer to send any excess ether back to buyer
     checkValue(_upc)
-    //onlyRetailer()
+    onlyRetailer()
   {
     // Update the appropriate fields - ownerID, retailerID, itemState
     items[_upc].ownerID = msg.sender;
@@ -369,7 +370,7 @@ contract SupplyChain is AccessControl, Ownable{
     soldByRetailer(_upc)
     // Call modifier to verify caller of this function
     verifyCaller(items[_upc].manufacturerID)
-    //onlyManufacturer()
+    onlyManufacturer()
   {
     // Update the appropriate fields
     items[_upc].itemState = State.ShippedByManufacture;
@@ -386,7 +387,7 @@ contract SupplyChain is AccessControl, Ownable{
     shippedByManufacture(_upc) 
     // Access Control List enforced by calling Smart Contract / DApp
     verifyCaller(items[_upc].retailerID)
-    //onlyRetailer()
+    onlyRetailer()
   {
     // Update the appropriate fields  itemState
     items[_upc].itemState = State.ReceivedByRetailer;
@@ -402,7 +403,7 @@ contract SupplyChain is AccessControl, Ownable{
   receivedByRetailer(_upc)
   // Call modifier to verify caller of this function
   verifyCaller(items[_upc].retailerID)
-  //onlyRetailer()
+  onlyRetailer()
   {
     // Update the appropriate fields
     items[_upc].itemState = State.ForSaleByRetailer;
@@ -423,7 +424,7 @@ contract SupplyChain is AccessControl, Ownable{
     paidEnough(items[_upc].productPrice)
     // Call modifer to send any excess ether back to buyer
     checkValue(_upc)
-    //onlyConsumer()
+    onlyConsumer()
   {
     // Update the appropriate fields - ownerID, consumerID, itemState
     items[_upc].ownerID = msg.sender;

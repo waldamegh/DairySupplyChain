@@ -25,22 +25,9 @@
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 var HDWalletProvider = require("truffle-hdwallet-provider");
 
-var mnemonic = 'old gasp violin detect weasel mother buffalo daughter dizzy seed lunar lady';
+var mnemonic = 'mango toilet blame brand luxury fat spell modify beach body length panic';
 
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
-  // to customize your Truffle configuration!
-  networks: {
-    rinkeby: {
-      provider: function() {
-        return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/454658b68b7a43f5a2930fbacae95562')
-      },
-      network_id: 4
-    }
-  }
-};
-
-//module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle
@@ -51,27 +38,27 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
-  //networks: {
+  networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache-cli, geth or parity) in a separate terminal
     // tab if you use this network and you must also set the `host`, `port` and `network_id`
     // options below to some value.
     //
-    //development: {
-    //host: "127.0.0.1",     // Localhost (default: none)
-    //port: 8545,            // Standard Ethereum port (default: none)
-    //network_id: "*",       // Any network (default: none)
-   // },
+    development: {
+    host: "127.0.0.1",     // Localhost (default: none)
+    port: 8545,            // Standard Ethereum port (default: none)
+    network_id: "*",       // Any network (default: none)
+    },
 
-    /*rinkeby: {
+    rinkeby: {
       provider: function() { 
-        return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/d6b3db2acdd4478cb08c8317a55f5262') 
+        return new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/454658b68b7a43f5a2930fbacae95562') 
       },
       network_id: 4,
-      gas: 7001299,
-      gasPrice: 10000000000,
-    },*/
+      //gas: 7001299,
+      //gasPrice: 10000000000,
+    },
     // Another network with more advanced options...
     // advanced: {
       // port: 8777,             // Custom port
@@ -99,16 +86,16 @@ module.exports = {
       // network_id: 2111,   // This network is yours, in the cloud.
       // production: true    // Treats this network as if it was a public net. (default: false)
     // }
-  //},
+  },
 
   // Set default mocha options here, use special reporters etc.
-  //mocha: {
+  mocha: {
     // timeout: 100000
-  //},
+  },
 
   // Configure your compilers
-  //compilers: {
-   // solc: {
+  compilers: {
+    solc: {
       // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
@@ -118,6 +105,6 @@ module.exports = {
       //  },
       //  evmVersion: "byzantium"
       // }
-  //  }
-//  }
-//}
+    }
+  }
+}

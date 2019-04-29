@@ -38,6 +38,20 @@ $ truffle test
 $ npm install
 $ npm run dev
 ```
+### Contract info (Rinkeby)
+* Transaction Hash:
+```
+ 0xe870e6aff2c3c990c69686fc0e664928636750ca1e359b37b549bbba96fac152
+```
+
+* Contract Address: 
+```
+0x5956AACf9f8E8d1718640320Faaa05bb2Aa7E679
+```
+* Account:
+```
+0xb81aEE2D85d4e27a93d07D1d4e4b66c5eDaaa88b
+```
 
 ### Libraries
 
