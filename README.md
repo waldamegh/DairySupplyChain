@@ -16,3 +16,29 @@ This project provides a blockchain-based supply chain solution for dairy product
 
 * Sequence Diagram
 ![image](https://github.com/waldamegh/DairySupplyChain/blob/master/diagrams/State%20Diagram.jpg)
+
+
+## Part Two (DApp)
+
+### Versions
+
+* Solidity: v0.5.0 
+* Truffle: v5.0.0 
+* Ganache CLI: v6.1.8
+* Node: v8.16.0
+
+### Getting Started
+
+```
+$ git clone https://github.com/waldamegh/DairySupplyChain.git
+$ cd DairySupplyChain
+$ truffle compile
+$ truffle migrate
+$ truffle test
+$ npm install
+$ npm run dev
+```
+
+### Libraries
+
+* Roles library: For access control
